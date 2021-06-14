@@ -2,7 +2,7 @@ from PIL import Image, ImageDraw, ImageFont
 import os, shutil, xlrd
 
 # Global Variables
-spreadsheet_file = 'test3.xlsx'
+spreadsheet_file = 'test.xlsx'
 font = ImageFont.truetype('fonts/Poppins-Medium.ttf', 40) # Setting the font to Poppins Medium and font size to 40
 
 names = []
