@@ -1,18 +1,28 @@
-
+# "mail" in text
 from PIL import Image, ImageDraw, ImageFont
 import os
 import shutil
 import xlrd
 
-def x():
+
+def folder_check():
+    if os.path.isdir("generated"): 
+        shutil.rmtree("generated")
+        os.mkdir("generated")
+    else:
+        os.mkdir("generated")
+
+
+def generate():
     
     wb = xlrd.open_workbook('test3.xlsx')
     sheet = wb.sheet_by_index(0)
-       
+
     for i in range(sheet.ncols):
-        if sheet.cell_value(0, i) == 'Name' or sheet.cell_value(0, i) == 'name' or sheet.cell_value(0, i) == 'Student name' or sheet.cell_value(0, i) == 'student name':
+        if "NAME" in sheet.cell_value(0, i).upper():
             ni = i
-            
+
+
     names = []
      
     for i in range(sheet.nrows):
@@ -20,11 +30,7 @@ def x():
         
     del names[0]
         
-    if os.path.isdir("generated"): 
-        shutil.rmtree("generated")
-        os.mkdir("generated")
-    else:
-        os.mkdir("generated")
+    folder_check()
        
     font = ImageFont.truetype('fonts/Poppins-Medium.ttf', 40)
 
@@ -42,4 +48,4 @@ def x():
         fname = current_name + ".png"
         img.save(r'generated/' + fname)
 
-x()
+generate()
