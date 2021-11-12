@@ -20,7 +20,7 @@ python auto.py
   
   
 ## Dependencies used
-- **pillow** (for image manipulation
+- **pillow** (for image manipulation)
 - **xlrd** (for working with spreadsheet files)
 
 
