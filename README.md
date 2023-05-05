@@ -17,7 +17,11 @@ Run the python file
 ```
 python auto.py
 ```
-  
+ 
+ ## Using sendEmail( )
+- Replace line no. 82 and 109 with your mail Id credentials.
+- Go to your google settings and allow "Run Less Secure Apps".
+ 
   
 ## Dependencies used
 - **pillow** (for image manipulation)
